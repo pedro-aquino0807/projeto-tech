@@ -1,0 +1,1 @@
+export default function ProductOptions({ selected, setSelected }) { const sizes = ['36','37','38','39','40','41','42']; return <div className="product-options"><h4>Tamanho</h4><div className="size-options">{sizes.map(size => <button key={size} className={selected === size ? 'selected' : ''} onClick={() => setSelected(size)}>{size}</button>)}</div></div>; }

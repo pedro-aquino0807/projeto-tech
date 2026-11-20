@@ -1,0 +1,11 @@
+import { Link } from 'react-router-dom';
+import Section from '../components/Section';
+import ProductListing from '../components/ProductListing';
+import { products } from '../data/products';
+export default function HomePage({ onAdd }) { return <main>
+  <section className="hero"><div className="container hero-content"><div className="hero-copy"><span className="eyebrow">NOVA COLEÇÃO 2026</span><h1>Seu estilo.<br/><em>Suas escolhas.</em></h1><p>Encontre peças que traduzem sua personalidade. Novidades selecionadas para acompanhar você em todos os momentos.</p><Link to="/produtos" className="btn-primary">Explorar produtos <span>→</span></Link><div className="hero-trust"><span>✓ Produtos selecionados</span><span>✓ Compra segura</span></div></div><div className="hero-art"><div className="hero-circle"></div><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=90" alt="Tênis vermelho em destaque"/><div className="floating-note"><strong>Até 30% OFF</strong><span>em produtos selecionados</span></div></div></div></section>
+  <div className="container benefits"><div><span>♧</span><div><strong>Frete grátis</strong><small>Acima de R$ 299</small></div></div><div><span>◇</span><div><strong>Pagamento seguro</strong><small>Seus dados protegidos</small></div></div><div><span>↺</span><div><strong>Troca facilitada</strong><small>Até 30 dias</small></div></div><div><span>♡</span><div><strong>Feito para você</strong><small>Seleção especial</small></div></div></div>
+  <div className="container"><Section title="Mais procurados" subtitle="Os favoritos de quem já escolheu a Digital Store." action={<Link className="text-link" to="/produtos">Ver todos →</Link>}><ProductListing products={products.slice(0,4)} onAdd={onAdd}/></Section>
+  <section className="promo-banner"><div><span className="eyebrow">SEU PRÓXIMO FAVORITO</span><h2>Um novo jeito<br/>de se expressar.</h2><p>Descubra nossa seleção de roupas e acessórios.</p><Link to="/produtos" className="btn-light">Descobrir coleção →</Link></div><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85" alt="Coleção de moda"/></section>
+  <Section title="Novidades para você" subtitle="Escolhas atuais para renovar seu visual."><ProductListing products={products.slice(4,8)} onAdd={onAdd}/></Section></div>
+ </main>; }

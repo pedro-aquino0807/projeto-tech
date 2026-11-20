@@ -1,0 +1,1 @@
+export default function FilterGroup({ category, setCategory }) { const options = ['Todos', 'Tênis', 'Roupas', 'Acessórios']; return <div className="filter-group"><h3>Categoria</h3>{options.map(item => <label key={item}><input type="radio" name="category" checked={category === item} onChange={() => setCategory(item)}/><span>{item}</span></label>)}</div>; }
